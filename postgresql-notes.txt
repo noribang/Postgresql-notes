@@ -135,14 +135,106 @@ JOIN statements
 ====================
 ***Joining multiple tables*** 
 
+INNER JOIN (Default JOIN)
+LEFT OUTER JOIN
+RIGHT OUTER JOIN
+FULL OUTER JOIN
+CROSS
+
+***Basic Syntax
+SELECT table_name.column_name1, table_name.column_name2,.. 
+	FROM table_name1
+	join_type JOIN table_name2 ON (join_condition)
+	WHERE (condition);
+
+**Multiple Tables
+SELECT table_name.column_name1, table_name.column_name2,.. 
+	FROM table_name1
+	join_type JOIN table_name2 ON (join_condition) 
+	WHERE (condition)
+	join_type JOIN table_name2 ON (join_condition) 
+	WHERE (condition)...;
+
+**INNER JOIN
+e.g.
+SELECT colors.color, shapes.shape 
+FROM colors 
+JOIN shapes 
+ON colors.id = shapes.color_id;
+or
+SELECT colors.color, shapes.shape 
+FROM colors 
+INNER JOIN shapes 
+ON colors.id = shapes.color_id;
+
+e.g.
+SELECT users.*, addresses.* 
+FROM users 
+INNER JOIN addresses 
+ON (users.id = addresses.user_id);
+
 e.g.
 SELECT * FROM sponsors 
 JOIN athletes ON (athletes.sponsor_id = sponsors.id)
 WHERE sponsors.id = 1;
 
+e.g.
 SELECT athletes.* FROM sponsors 
 JOIN endorsements ON (sponsors.id = endorsements.sponsor_id)
 JOIN athletes ON (endorsements.athlete_id = athletes.id)
 WHERE sponsors.id = 1;
+
+
+**LEFT OUTER JOIN
+e.g.
+SELECT users.*, addresses.*
+FROM users
+LEFT JOIN addresses
+ON (users.id = addresses.user_id);
+
+
+**RIGHT OUTER JOIN
+e.g.
+SELECT users.*, addresses.*
+FROM users
+RIGHT OUTER JOIN addresses
+ON (users.id = addresses.user_id);
+
+e.g.
+SELECT reviews.book_id, reviews.content,
+reviews.rating, reviews.published_date,
+books.id, books.title, books.author
+FROM reviews 
+RIGHT OUTER JOIN books
+ON (reviews.book_id = books.id);
+
+e.g.
+SELECT reviews.book_id, reviews.content,
+reviews.rating, reviews.published_date,
+books.id, books.title, books.author
+FROM reviews 
+RIGHT OUTER JOIN books
+ON (reviews.book_id = books.id)
+WHERE (reviews.book_id = 2);
+
+**FULL OUTER JOIN
+e.g.
+
+
+**CROSS JOIN
+e.g.
+SELECT *
+FROM users
+CROSS JOIN addresses;
+
+
+**Multiple JOINS
+e.g.
+SELECT users.full_name, books.title, checkouts.checkout_date
+FROM users
+INNER JOIN checkouts ON (users.id = checkouts.user_id)
+INNER JOIN books ON (books.id = checkouts.book_id);
+
+
 
 
