@@ -1,0 +1,148 @@
+https://launchschool.com/books/sql/read/add_data#datadml
+https://www.learnhowtoprogram.com/ruby/ruby-database-basics/sql-basics
+====================
+Postgresql commands
+====================
+
+******************************
+Start postgresql server
+******************************
+pg_ctl -- start
+
+******************************
+Stop postgresql server
+******************************
+brew services stop postgresql
+or
+pg_ctl -- stop
+
+******************************
+Access postgresql client application
+******************************
+psql
+
+******************************
+Create database
+******************************
+createdb name_of_db
+e.g. createdb sql_book
+
+or CREATE DATABASE name_of_db
+
+******************************
+Run SQL commands from SQL file (create table, insert rows, etc.)
+******************************
+psql name_of_database < name_of_sql_file.sql
+e.g. psql sql_book < colors-shapes.sql
+
+******************************
+Connect to database
+******************************
+psql -d name_of_db
+e.g. psql -d sql_book
+
+\c name_of_database
+
+
+******************************
+Other useful postgresql commands
+******************************
+\?                     __List all psql commands.
+\l                     __List all databases.
+\c name_of_database    __Connect to databases.
+\?                     __List all psql commands.
+\d name_of_table       __List columns of table.
+\dt                    __List all tables.
+\q                     __Quit psql.
+
+******************************
+SQL commands
+******************************
+CREATE      __create table
+DROP        __drop table
+ALTER       __add/ drop column to table
+INSERT INTO __inserts rows into table
+SELECT      __query table	
+UPDATE      __change row data
+DELETE      __delete row record
+
+
+CREATE DATABASE database_name;
+DROP DATABASE database_name;
+
+CREATE TABLE table_name (name varchar, age int, birthday timestamp);
+
+******************************
+Primary Key & Foreign Key CLAUSES after Table created 
+https://stackoverflow.com/questions/35676149/adding-a-column-as-a-foreign-key-gives-error-column-referenced-in-foreign-key-co
+******************************
+ALTER TABLE table_name ADD PRIMARY KEY (id);
+
+ALTER TABLE table_name
+   ADD CONSTRAINT fk_someName
+   FOREIGN KEY (fk_col_name) 
+   REFERENCES table_referencing (pk_col_name);
+
+
+******************************
+Primary Key & Foreign Key CLAUSES when using CREATE TABLE 
+******************************
+** Clauses added to CREATE TABLE **
+PRIMARY KEY (pk_col_name)
+FOREIGN KEY (fk_col_name) REFERENCES table_referencing (pk_col_name) ON DELETE CASCADE
+**********************************
+
+DROP TABLE table_name;
+
+ALTER TABLE table_name ADD col_name data_type;
+
+ALTER TABLE table_name DROP col_name;
+
+INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...);
+or
+INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...) RETURNING id;
+
+UPDATE table_name SET col_name = 'value' WHERE col_name = value; 
+e.g. UPDATE contacts SET name = 'Wes Anderson' WHERE id = 1;
+    (**__Updating row by primary key)
+
+DELETE FROM table_name WHERE col_name = value;
+e.g. DELETE FROM contacts WHERE id = 1;
+
+SELECT col_name FROM table_name;
+(e.g. SELECT * FROM table_name;)
+
+SELECT col_name, col_name,... FROM table_name WHERE col_name >= some_value
+(e.g. SELECT * FROM contacts WHERE age >= 18;
+      SELECT * FROM contacts WHERE age BETWEEN 13 AND 17;
+      SELECT * FROM contacts WHERE name BETWEEN 'Judith' AND 'Wilma';
+      SELECT * FROM contacts WHERE name LIKE 'We%';
+      SELECT * FROM contacts WHERE birthday IN ('1969-01-01', '1999-01-01');
+      SELECT * FROM contacts WHERE NOT age >= 18;
+
+
+
+====================
+Database schemas
+====================
+one-to-one relationship
+one-to-many relationship
+many-to-many relationship (*** use Join table *** )
+
+
+====================
+JOIN statements
+====================
+***Joining multiple tables*** 
+
+e.g.
+SELECT * FROM sponsors 
+JOIN athletes ON (athletes.sponsor_id = sponsors.id)
+WHERE sponsors.id = 1;
+
+SELECT athletes.* FROM sponsors 
+JOIN endorsements ON (sponsors.id = endorsements.sponsor_id)
+JOIN athletes ON (endorsements.athlete_id = athletes.id)
+WHERE sponsors.id = 1;
+
+
