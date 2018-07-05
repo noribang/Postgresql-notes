@@ -12,6 +12,10 @@ last_login timestamp without time zone DEFAULT now();
 );
 
 
+-- 
+-- ALTER TABLE.
+-- 
+
 -- Rename Table.
 ALTER TABLE users
 RENAME TO all_users;
@@ -47,6 +51,10 @@ ALTER TABLE users ADD CHECK (full_name <> '');
 -- Remove Table.
 DROP TABLE all_users;
 
+-- 
+-- INSERT ROWS.
+-- 
+
 -- Insert row.
 INSERT INTO users (full_name, enabled)
 VALUES ('John Smit', false);
@@ -55,3 +63,10 @@ VALUES ('John Smit', false);
 INSERT INTO users (full_name)
 VALUES ('Jane Smith'), ('Harry Potter');
 
+-- 
+-- QUERY
+-- 
+
+SELECT enabled, full_name
+FROM users
+WHERE id < 2;
