@@ -57,13 +57,40 @@ Other useful postgresql meta commands
 ******************************
 SQL commands
 ******************************
-CREATE      __create table
-DROP        __drop table
+CREATE      __create table, db, etc.
+DROP        __drop table, db, etc.
 ALTER       __add/ drop column to table
-INSERT INTO __inserts rows into table
+INSERT      __inserts rows into table
 SELECT      __query table	
 UPDATE      __change row data
 DELETE      __delete row record
+
+******************************
+Clauses
+******************************
+INTO
+RENAME
+TO
+COLUMN
+TABLE
+DATABASE
+TYPE
+SET
+CONSTRAINT
+
+
+******************************
+
+
+******************************
+Constraints
+******************************
+NOT NULL
+NOW();
+DEFAULT
+
+
+******************************
 
 
 CREATE DATABASE database_name;
@@ -108,7 +135,7 @@ ALTER DATABASE name_of_database RENAME TO new_name_for_database
 
 ******************************
  
- 
+
 INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...);
 or
 INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...) RETURNING id;
