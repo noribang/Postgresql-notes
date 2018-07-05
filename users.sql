@@ -4,6 +4,14 @@ username char(25),
 enabled boolean DEFAULT TRUE
 );
 
+CREATE TABLE users (
+id serial UNIQUE NOT NULL,
+full_name varchar (25) NOT NULL,
+enabled boolean DEFAULT true,
+last_login timestamp without time zone DEFAULT now();
+);
+
+
 -- Rename Table.
 ALTER TABLE users
 RENAME TO all_users;
@@ -32,8 +40,18 @@ ADD COLUMN last_login timestamp NOT NULL DEFAULT NOW();
 ALTER TABLE all_users
 DROP COLUMN enabled;
 
+-- Add Check to Column.
+-- e.g. Checks that column values is not empty string.
+ALTER TABLE users ADD CHECK (full_name <> '');
+
 -- Remove Table.
 DROP TABLE all_users;
 
+-- Insert row.
+INSERT INTO users (full_name, enabled)
+VALUES ('John Smit', false);
 
+-- Insert multiple rows.
+INSERT INTO users (full_name)
+VALUES ('Jane Smith'), ('Harry Potter');
 
