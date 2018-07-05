@@ -45,12 +45,11 @@ e.g. psql -d sql_book
 
 
 ******************************
-Other useful postgresql commands
+Other useful postgresql meta commands
 ******************************
 \?                     __List all psql commands.
 \l                     __List all databases.
 \c name_of_database    __Connect to databases.
-\?                     __List all psql commands.
 \d name_of_table       __List columns of table.
 \dt                    __List all tables.
 \q                     __Quit psql.
