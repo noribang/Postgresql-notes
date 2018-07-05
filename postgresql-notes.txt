@@ -97,6 +97,18 @@ ALTER TABLE table_name ADD col_name data_type;
 
 ALTER TABLE table_name DROP col_name;
 
+
+******************************
+Change name of database 
+Note: Disconnect from db first.
+http://www.postgresqltutorial.com/postgresql-rename-database/
+******************************
+
+ALTER DATABASE name_of_database RENAME TO new_name_for_database
+
+******************************
+ 
+ 
 INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...);
 or
 INSERT INTO table_name (col_name, col_name,...) VALUES (col_value, col_value, col_value,...) RETURNING id;
