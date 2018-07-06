@@ -166,6 +166,68 @@ FROM users;
 SELECT count(DISTINCT full_name)
 FROM users;
 
+-- String functions.
+SELECT length(fullname)
+FROM users;
+
+SELECT full_name, length(full_name) 
+FROM users;
+
+SELECT full_name, length(full_name) 
+FROM users 
+WHERE length(full_name) > 10;
+
+SELECT trim(leading ' ' from full_name)
+FROM users;
+
+SELECT trim(leading 'H' from full_name)
+FROM users;
+
+-- Date/ Time functions.
+SELECT full_name, date_part('year', last_login)
+FROM users;
+
+SELECT full_name, date_part('hour', last_login)
+FROM users;
+
+SELECT full_name, date_part('minute', last_login)
+FROM users;
+
+SELECT full_name, age(last_login)
+FROM users;
+
+-- Aggregate functions
+SELECT count(id)
+FROM users;
+
+SELECT sum(id)
+FROM users;
+
+SELECT min(last_login)
+FROM users;
+
+SELECT max(last_login)
+FROM users;
+
+SELECT avg(id)
+FROM users;
+
+-- GROUP BY
+SELECT enabled, count(id)
+FROM users
+GROUP BY enabled;
+
+SELECT enabled, id, count(id)
+FROM users
+GROUP BY enabled, id;
+
+
+
+
+
+
+
+
 
 
 

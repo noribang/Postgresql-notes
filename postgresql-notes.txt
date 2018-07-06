@@ -82,6 +82,7 @@ WHERE
 ORDER BY
 ASC
 DESC
+GROUP BY
 
 ******************************
 
