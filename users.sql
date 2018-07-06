@@ -220,16 +220,3 @@ GROUP BY enabled;
 SELECT enabled, id, count(id)
 FROM users
 GROUP BY enabled, id;
-
-
-
-
-
-
-
-
-
-
-
-
-
