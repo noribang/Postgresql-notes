@@ -66,7 +66,108 @@ VALUES ('Jane Smith'), ('Harry Potter');
 -- 
 -- QUERY
 -- 
+select * from users;
+ id |  full_name   | enabled |         last_login         
+----+--------------+---------+----------------------------
+  1 | John Smit    | f       | 2018-07-05 14:47:23.183981
+  2 | Jane Smith   | t       | 2018-07-05 14:51:28.860045
+  3 | Harry Potter | t       | 2018-07-05 14:51:28.860045
+
+-- Basic Syntax:
+-- =============
+-- SELECT [*, (column_name1, column_name2, ...)]
+-- FROM table_name 
+-- WHERE (condition);
 
 SELECT enabled, full_name
 FROM users
 WHERE id < 2;
+
+-- SELECT [*, (column_name1, column_name2, ...)]
+-- FROM table_name 
+-- WHERE (condition)
+-- ORDER BY column_name;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE id >= 1
+ORDER BY enabled;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE id >= 1
+ORDER BY enabled DESC;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE id >= 1
+ORDER BY enabled ASC;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE id >= 1;
+ORDER BY enabled DESC, id DESC;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE id >= 1;
+ORDER BY enabled DESC, id ASC;
+
+SELECT id, full_name, enabled, last_login
+FROM users
+WHERE id >= 2;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE full_name IS NULL;
+
+SELECT id, full_name, enabled
+FROM users
+WHERE full_name IS NOT NULL;
+
+SELECT id, full_name, enabled, last_login
+FROM users
+WHERE full_name = 'Harry Potter' OR enabled = 'false';
+
+SELECT id, full_name, enabled, last_login
+FROM users
+WHERE full_name = 'Harry Potter' AND enabled = 'true';
+
+SELECT id, enabled, last_login, full_name
+FROM users
+WHERE full_name LIKE '%Smith';
+
+SELECT *
+FROM users
+LIMIT 1;
+
+SELECT * 
+FROM users
+LIMIT 1
+OFFSET 1;
+
+SELECT id, full_name, enabled, last_login
+FROM users
+LIMIT 2
+OFFSET 1;
+
+INSERT INTO users (id, full_name)
+VALUES (4, 'Harry Potter'), (5, 'Jane Smith');
+
+SELECT full_name
+FROM users;
+
+SELECT DISTINCT full_name
+FROM users;
+
+SELECT count(full_name)
+FROM users;
+
+SELECT count(DISTINCT full_name)
+FROM users;
+
+
+
+
+
+

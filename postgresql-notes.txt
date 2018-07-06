@@ -78,7 +78,10 @@ DATABASE
 TYPE
 SET
 CONSTRAINT
-
+WHERE
+ORDER BY
+ASC
+DESC
 
 ******************************
 
@@ -94,7 +97,45 @@ CHECK
 
 ******************************
 
+******************************
+Comparison Operators
+******************************
+<         less than
+>         greater than
+<=        less than or equal to
+>=        greater than or equal to
+=         equal
+<> or !=  not equal
+******************************
 
+
+******************************
+Logical Operators
+******************************
+AND 
+OR
+NOT
+******************************
+
+
+******************************
+Comparison Predicates
+******************************
+IS NULL
+IS NOT NULL
+******************************
+
+
+******************************
+String Matching Operator
+******************************
+LIKE
+SIMILAR TO (regex)
+******************************
+
+====================
+Statements
+====================
 CREATE DATABASE database_name;
 DROP DATABASE database_name;
 
