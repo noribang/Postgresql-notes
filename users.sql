@@ -220,3 +220,32 @@ GROUP BY enabled;
 SELECT enabled, id, count(id)
 FROM users
 GROUP BY enabled, id;
+
+-- UPDATE rows.
+UPDATE users
+SET enabled = false; 
+
+UPDATE users
+SET enabled = true
+WHERE full_name = 'Harry Potter' OR full_name = 'Jane Smith';
+
+UPDATE users
+SET full_name = 'Alice Walker'
+WHERE id = 2;
+
+-- DELETE rows.
+DELETE FROM users
+WHERE full_name = 'Harry Potter' AND id > 3;
+
+DELETE FROM users; -- Deletes all rows from users table.
+
+-- UPDATE column to NULL.
+UPDATE table_name 
+SET column_name1 = NULL
+WHERE (expression);
+
+UPDATE users
+SET last_login = NULL
+WHERE full_name = 'John Smit' 
+AND id < 2;
+
