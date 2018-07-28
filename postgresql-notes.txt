@@ -53,6 +53,7 @@ Other useful postgresql meta commands
 \d name_of_table       __List columns of table.
 \dt                    __List all tables.
 \q                     __Quit psql.
+\! clear               __Clear psql screen.
 
 ******************************
 SQL commands
@@ -83,6 +84,8 @@ ORDER BY
 ASC
 DESC
 GROUP BY
+NOT IN 
+  (e.g. WHERE NOT IN)
 
 ******************************
 
