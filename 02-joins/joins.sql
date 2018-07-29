@@ -1,3 +1,14 @@
+--------------------------------------------------------
+-- JOIN Syntax:
+SELECT table_name.column_name1, table_name.column_name2,...
+FROM table1
+join_type JOIN table2 ON (join_condition)
+WHERE (condition)
+join_type JOIN table3 ON (join_condition)
+WHERE (condition)
+...
+--------------------------------------------------------
+
 -- INNER JOIN
 -- LEFT OUTER JOIN
 -- RIGHT OUTER JOIN
@@ -10,7 +21,7 @@ SELECT colors.color, shapes.shape
 FROM colors
 JOIN shapes
 ON colors.id = shapes.color_id; 
-
+-- or
 SELECT users.*, addresses.*
 FROM users
 INNER JOIN addresses
