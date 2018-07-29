@@ -33,6 +33,14 @@ FROM users
 LEFT OUTER JOIN addresses
 ON (users.id = addresses.user_id);
 
+-- RIGHT OUTER JOIN
+SELECT reviews.book_id, reviews.content, 
+reviews.rating, reviews.published_date,
+books.id, books.title, books.author
+FROM reviews
+RIGHT OUTER JOIN books
+ON (reviews.book_id = books.id);
+
 
 -- FULL OUTER JOIN
 SELECT users.*, addresses.*
