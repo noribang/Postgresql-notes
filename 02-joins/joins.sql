@@ -55,6 +55,20 @@ FROM checkouts;
 SELECT count(id) AS "Number of Books Checked Out"
 FROM checkouts;
 
+-- Subqueries
+SELECT u.full_name 
+FROM users AS u
+WHERE u.id
+NOT IN (SELECT c.user_id FROM checkouts);
+
+SELECT u.full_name 
+FROM users u
+LEFT OUTER JOIN checkouts AS c 
+ON (u.id = c.user_id)
+WHERE c.user_id IS NULL;
+
+
+
 
 
 

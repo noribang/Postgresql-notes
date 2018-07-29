@@ -84,9 +84,22 @@ ORDER BY
 ASC
 DESC
 GROUP BY
+NULL
+IS
+  (e.g. IS NULL)
+JOIN
+******************************
+
+
+******************************
+Clauses-Subqueries
+******************************
+IN
 NOT IN 
   (e.g. WHERE NOT IN)
-
+ANY
+SOME
+ALL
 ******************************
 
 
