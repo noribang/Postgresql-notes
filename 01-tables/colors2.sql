@@ -9,3 +9,5 @@ INSERT INTO colors (id, color) VALUES
 	(2, 'Blue'),
 	(3, 'Orange'),
 	(4, 'Green');
+
+DROP TABLE colors;

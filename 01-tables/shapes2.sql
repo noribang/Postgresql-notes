@@ -11,3 +11,5 @@ INSERT INTO shapes (id, color_id, shape) VALUES
 	(2, 1, 'Star'),
 	(3, 2, 'Triangle'),
 	(4, 4, 'Circle');
+
+DROP TABLE shapes;
