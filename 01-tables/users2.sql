@@ -1,4 +1,6 @@
--- Create Table
+----------------------
+-- Create Table:
+----------------------
 CREATE TABLE users (
 	id serial UNIQUE NOT NULL,
 	full_name varchar(25) NOT NULL,
@@ -82,7 +84,14 @@ ALTER TABLE users
 ADD COLUMN last_login timestamp NOT NULL DEFAULT NOW();
 
 ALTER TABLE users
+ADD COLUMN id serial UNIQUE NOT NULL;
+
+
+ALTER TABLE users
 DROP COLUMN last_login;
+
+ALTER TABLE users
+DROP COLUMN id;
 
 
 
