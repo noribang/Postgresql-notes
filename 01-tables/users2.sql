@@ -22,6 +22,9 @@ VALUES
 	(DEFAULT, 'Jane Smith', true, DEFAULT),
 	(DEFAULT, 'Bill Smith', false, DEFAULT);
 
+INSERT INTO users (id, full_name)
+VALUES (DEFAULT, 'Harry Potter');
+
 -- Delete Row
 DELETE FROM users WHERE id = 1;
 DELETE FROM users WHERE id > 2;
@@ -92,7 +95,3 @@ DROP COLUMN last_login;
 
 ALTER TABLE users
 DROP COLUMN id;
-
-
-
-
