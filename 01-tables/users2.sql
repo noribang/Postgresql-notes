@@ -1,4 +1,21 @@
 ----------------------
+-- Create database:
+----------------------
+createdb name_of_db
+e.g. createdb sql_book
+
+or CREATE DATABASE name_of_db
+
+----------------------
+-- Drop database:
+----------------------
+dropdb name_of_db
+e.g. dropdb sql_book
+
+or DROP DATABASE name_of_db
+
+
+----------------------
 -- Create Table:
 ----------------------
 CREATE TABLE users (
@@ -7,6 +24,11 @@ CREATE TABLE users (
 	enabled boolean DEFAULT true,
 	last_login timestamp without time zone DEFAULT now()
 );
+
+----------------------
+-- Drop Table:
+----------------------
+DROP TABLE users;
 
 ----------------------
 -- INSERT Row syntax:
@@ -25,13 +47,24 @@ VALUES
 INSERT INTO users (id, full_name)
 VALUES (DEFAULT, 'Harry Potter');
 
--- Delete Row
-DELETE FROM users WHERE id = 1;
-DELETE FROM users WHERE id > 2;
-DELETE FROM users WHERE id < 3;
+----------------------
+-- DELETE Row syntax:
+----------------------
+DELETE FROM users 
+WHERE id = 1;
 
--- Drop Table
-DROP TABLE users;
+DELETE FROM users 
+WHERE id > 2;
+
+DELETE FROM users 
+WHERE id < 3;
+
+-- DELETE data from all rows:
+DELETE FROM table_name;
+----------------------
+-- e.g.
+DELETE FROM users;
+
 
 ----------------------
 -- ALTER TABLE syntax:

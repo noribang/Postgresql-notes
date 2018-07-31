@@ -30,6 +30,14 @@ e.g. createdb sql_book
 or CREATE DATABASE name_of_db
 
 ******************************
+Drop database
+******************************
+dropdb name_of_db
+e.g. dropdb sql_book
+
+or DROP DATABASE name_of_db
+
+******************************
 Run SQL commands from SQL file (create table, insert rows, etc.)
 ******************************
 psql name_of_database < name_of_sql_file.sql

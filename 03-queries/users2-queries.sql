@@ -124,5 +124,3 @@ GROUP BY enabled;
 SELECT enabled, id, count(id) AS "Count ids"
 FROM users
 GROUP BY enabled, id;
-
-

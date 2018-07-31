@@ -1,4 +1,5 @@
 ----------------------
+-- UPDATE rows...
 -- UPDATE specific data in Table:
 ----------------------
 UPDATE table_name 
@@ -37,6 +38,7 @@ WHERE id = 2;
 
 
 ----------------------
+-- DELETE rows...
 -- DELETE data from Table:
 ----------------------
 DELETE FROM table_name 
