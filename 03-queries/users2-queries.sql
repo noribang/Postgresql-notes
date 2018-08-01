@@ -50,7 +50,7 @@ SELECT id, full_name, enabled, last_login
 FROM users
 WHERE id >= 2
 ORDER BY enabled ASC, id DESC;
-
+-------------------------------------------
 SELECT id, full_name, enabled, last_login
 FROM users
 WHERE id IS NULL;
@@ -59,6 +59,10 @@ SELECT id, full_name, enabled, last_login
 FROM users
 WHERE id IS NOT NULL;
 
+UPDATE users
+SET enabled = NULL
+WHERE id = 2;
+-------------------------------------------
 SELECT id, full_name, enabled
 FROM users
 WHERE full_name = 'Harry Potter' OR enabled = 'false';
@@ -117,10 +121,22 @@ SELECT enabled, count(id)
 FROM users
 GROUP BY enabled;
 
+SELECT enabled, count(id)
+FROM users
+GROUP BY enabled
+ORDER BY enabled DESC;
+
 SELECT enabled, count(id) AS "Num of Ids"
 FROM users
 GROUP BY enabled;
 
+SELECT enabled, count(id) AS "Num of Ids"
+FROM users
+GROUP BY enabled
+ORDER BY enabled ASC;
+
 SELECT enabled, id, count(id) AS "Count ids"
 FROM users
 GROUP BY enabled, id;
+
+

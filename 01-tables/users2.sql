@@ -47,6 +47,8 @@ VALUES
 INSERT INTO users (id, full_name)
 VALUES (DEFAULT, 'Harry Potter');
 
+DELETE FROM users;
+
 ----------------------
 -- DELETE Row syntax:
 ----------------------
