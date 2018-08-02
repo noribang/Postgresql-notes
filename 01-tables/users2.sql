@@ -47,6 +47,9 @@ VALUES
 INSERT INTO users (id, full_name)
 VALUES (DEFAULT, 'Harry Potter');
 
+ALTER TABLE users 
+ADD PRIMARY KEY (id);
+
 DELETE FROM users;
 
 ----------------------
