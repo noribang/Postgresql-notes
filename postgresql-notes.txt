@@ -55,13 +55,14 @@ e.g. psql -d sql_book
 ******************************
 Other useful postgresql meta commands
 ******************************
-\?                     __List all psql commands.
-\l                     __List all databases.
-\c name_of_database    __Connect to databases.
-\d name_of_table       __List columns of table.
-\dt                    __List all tables.
-\q                     __Quit psql.
-\! clear               __Clear psql screen.
+\?                                   __List all psql commands.
+\l (or \list)                        __List all databases.
+\c (or \connect) name_of_database    __Connect to databases.
+\d name_of_table                     __List columns of table.
+\dt                                  __List all tables.
+\q (or \quit)                        __Quit psql.
+
+\! clear                             __Clear psql screen.
 
 ******************************
 SQL commands

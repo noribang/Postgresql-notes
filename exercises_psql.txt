@@ -1,0 +1,28 @@
+START/ STOP PSQL SERVER
+-----------------------
+pg_ctl -- start
+pg_ctl -- stop
+
+OPEN/ CLOSE CONSOLE
+-----------------------
+psql
+\quit
+
+CREATE/ CONNECT/ DROP DATABASE
+------------------------------
+(Using psql client application)
+\quit
+createdb database_one
+psql -d database_one
+\list
+\quit
+dropdb database_one
+
+(From psql console)
+psql
+CREATE DATABASE database_two;
+\connect databas_two
+\list
+DROP DATABASE database_two;
+\list
+\quit
