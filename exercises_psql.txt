@@ -1,3 +1,10 @@
+---------------------------
+---------------------------
+1. Create Databases
+---------------------------
+---------------------------
+
+
 START/ STOP PSQL SERVER
 -----------------------
 pg_ctl -- start
@@ -26,3 +33,46 @@ CREATE DATABASE database_two;
 DROP DATABASE database_two;
 \list
 \quit
+
+
+---------------------------
+---------------------------
+2. Create Tables
+---------------------------
+---------------------------
+pg_ctl -- start
+
+createdb encyclopedia
+psql -d encyclpedia
+\list
+
+or
+
+psql
+CREATE DATABASE encyclopedia;
+\connect encyclopedia
+
+CREATE TABLE countries (
+id serial UNIQUE NOT NULL,
+name varchar(50) NOT NULL,
+capital varchar(50),
+population integer
+);
+
+ALTER TABLE countries
+ADD PRIMARY KEY (id);
+
+ALTER TABLE countries
+ALTER COLUMN name TYPE VARCHAR(25);
+
+ALTER TABLE countries
+ALTER COLUMN capital
+SET NOT NULL;
+
+
+
+
+
+
+
+
