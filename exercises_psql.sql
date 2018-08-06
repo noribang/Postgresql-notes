@@ -52,6 +52,8 @@ psql
 CREATE DATABASE encyclopedia;
 \connect encyclopedia
 
+countries Table
+---------------------------
 CREATE TABLE countries (
 id serial UNIQUE NOT NULL,
 name varchar(50) NOT NULL,
@@ -69,10 +71,17 @@ ALTER TABLE countries
 ALTER COLUMN capital
 SET NOT NULL;
 
+famous people Table
+---------------------------
+CREATE TABLE famous_people (
+id serial UNIQUE NOT NULL,
+name VARCHAR(100) NOT NULL,
+occupation VARCHAR(150),
+date_of_birth VARCHAR(50),
+deceased boolean DEFAULT false
+);
 
-
-
-
-
+ALTER TABLE famous_people
+ADD PRIMARY KEY (id);
 
 
