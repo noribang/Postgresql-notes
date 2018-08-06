@@ -1,21 +1,21 @@
 ---------------------------
 ---------------------------
-1. Create Databases
+-- 1. Create Databases
 ---------------------------
 ---------------------------
 
 
-START/ STOP PSQL SERVER
+-- START/ STOP PSQL SERVER
 -----------------------
 pg_ctl -- start
 pg_ctl -- stop
 
-OPEN/ CLOSE CONSOLE
+-- OPEN/ CLOSE CONSOLE
 -----------------------
 psql
 \quit
 
-CREATE/ CONNECT/ DROP DATABASE
+-- CREATE/ CONNECT/ DROP DATABASE
 ------------------------------
 (Using psql client application)
 \quit
@@ -37,7 +37,7 @@ DROP DATABASE database_two;
 
 ---------------------------
 ---------------------------
-2. Create Tables
+-- 2. Create Tables
 ---------------------------
 ---------------------------
 pg_ctl -- start
@@ -52,7 +52,7 @@ psql
 CREATE DATABASE encyclopedia;
 \connect encyclopedia
 
-countries Table
+-- countries Table
 ---------------------------
 CREATE TABLE countries (
 id serial UNIQUE NOT NULL,
@@ -71,7 +71,7 @@ ALTER TABLE countries
 ALTER COLUMN capital
 SET NOT NULL;
 
-famous people Table
+-- famous people Table
 ---------------------------
 CREATE TABLE famous_people (
 id serial UNIQUE NOT NULL,
@@ -83,5 +83,32 @@ deceased boolean DEFAULT false
 
 ALTER TABLE famous_people
 ADD PRIMARY KEY (id);
+
+
+-- animals Table
+---------------------------
+CREATE TABLE animals (
+id serial UNIQUE NOT NULL,
+name VARCHAR(100) NOT NULL,
+binomial_name VARCHAR(100) NOT NULL,
+max_weight_(kg) decimal(8,3),
+max_age_(years) integer,
+conservation_status char(2)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
