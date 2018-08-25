@@ -96,12 +96,27 @@ max_age_(years) integer,
 conservation_status char(2)
 );
 
+---------------------------
+---------------------------
+-- Create Databases
+---------------------------
+---------------------------
+CREATE DATABASE ls_burger_2;
+\connect ls_burger_2
 
-
-
-
-
-
+---------------------------
+---------------------------
+-- Create Tables
+---------------------------
+---------------------------
+CREATE TABLE orders (
+id SERIAL UNIQUE NOT NULL,
+customer_name VARCHAR(100) NOT NULL,
+burger VARCHAR(50),
+side VARCHAR(50),
+drink VARCHAR(50),
+order_total DECIMAL(4,2) NOT NULL
+);
 
 
 

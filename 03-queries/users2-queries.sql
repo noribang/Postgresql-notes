@@ -10,6 +10,12 @@ FROM table_name
 WHERE (condition)
 ORDER BY column_name;
 
+SELECT [*, (column_name1, column_name2, ...)]
+FROM table_name 
+WHERE (condition)
+GROUP BY column_name, column_name, ...;
+ORDER BY column_name
+LIMIT number_of_rows_to_display OFFSET number_of_rows_to_offset;
 ----------------------
 
 SELECT enabled, full_name
@@ -59,10 +65,12 @@ SELECT id, full_name, enabled, last_login
 FROM users
 WHERE id IS NOT NULL;
 
+-------------------------------------------
 UPDATE users
 SET enabled = NULL
 WHERE id = 2;
 -------------------------------------------
+
 SELECT id, full_name, enabled
 FROM users
 WHERE full_name = 'Harry Potter' OR enabled = 'false';
@@ -101,16 +109,29 @@ FROM users;
 -- WHERE condition;
 ----------------------
 
-SELECT count(full_name) 
+SELECT count(full_name)
+FROM users; 
+
+SELECT count(full_name) as "Number of full names"
 FROM users; 
 
 SELECT count(DISTINCT full_name)
 FROM users;
 
-SELECT count(id)
+SELECT count(DISTINCT full_name) as "Number of full names"
 FROM users;
 
 SELECT count(id)
+FROM users;
+
+SELECT count(id) as "Number of IDs"
+FROM users;
+
+SELECT count(id)
+FROM users
+WHERE enabled = true;
+
+SELECT count(id) as "Number of IDs"
 FROM users
 WHERE enabled = true;
 
@@ -121,14 +142,14 @@ SELECT enabled, count(id)
 FROM users
 GROUP BY enabled;
 
+SELECT enabled, count(id) AS "Num of Ids"
+FROM users
+GROUP BY enabled;
+
 SELECT enabled, count(id)
 FROM users
 GROUP BY enabled
 ORDER BY enabled DESC;
-
-SELECT enabled, count(id) AS "Num of Ids"
-FROM users
-GROUP BY enabled;
 
 SELECT enabled, count(id) AS "Num of Ids"
 FROM users
@@ -139,4 +160,7 @@ SELECT enabled, id, count(id) AS "Count ids"
 FROM users
 GROUP BY enabled, id;
 
-
+SELECT enabled, id, count(id) AS "Count ids"
+FROM users
+GROUP BY enabled, id
+ORDER BY id ASC;
