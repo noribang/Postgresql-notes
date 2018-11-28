@@ -11,7 +11,7 @@ WHERE (condition)
 ...
 --------------------------------------------------------
 
--- INNER JOIN
+-- INNER JOIN (default)
 -- LEFT OUTER JOIN
 -- RIGHT OUTER JOIN
 -- FULL OUTER JOIN
@@ -103,17 +103,25 @@ FROM users AS u
 CROSS JOIN addresses AS a;
 
 -- Multiple JOINS
-SELECT users.full_name, books.title, checkouts.checkout_date
+SELECT users.id, users.full_name, books.title, checkouts.checkout_date
 FROM users
 INNER JOIN checkouts 
 ON (users.id = checkouts.user_id)
 INNER JOIN books 
 ON (books.id = checkouts.book_id);
 
+SELECT u.id, u.full_name, b.title, c.checkout_date
+FROM users as u
+INNER JOIN checkouts as c
+ON (u.id = c.user_id)
+INNER JOIN books as b
+ON (b.id = c.book_id);
+
+
 SELECT u.id, u.full_name, b.id, b.title, c.user_id, c.book_id, c.checkout_date
 FROM users AS u
 INNER JOIN checkouts AS c
-ON (u.id = c.user_id) 
+ON (u.id = c.user_id) 	
 INNER JOIN books AS b
 ON (b.id = c.book_id);
 
@@ -122,8 +130,10 @@ ON (b.id = c.book_id);
 -- Aliasing Tables
 SELECT u.full_name, b.title, c.checkout_date
 FROM users AS u
-INNER JOIN checkouts AS c ON (u.id = c.user_id)
-INNER JOIN books AS b ON (b.id = c.book_id);
+INNER JOIN checkouts AS c 
+ON (u.id = c.user_id)
+INNER JOIN books AS b 
+ON (b.id = c.book_id);
 
 -- Aliasing Columns 
 SELECT id AS "Number of Books Checked Out"
