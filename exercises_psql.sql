@@ -52,6 +52,9 @@ psql
 CREATE DATABASE encyclopedia;
 \connect encyclopedia
 
+psql name_of_database < name_of_sql_file.sql
+e.g. psql encyclopedia < countries.sql
+
 -- countries Table
 ---------------------------
 CREATE TABLE countries (
