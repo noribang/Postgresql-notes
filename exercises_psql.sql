@@ -122,6 +122,49 @@ order_total DECIMAL(4,2) NOT NULL
 );
 
 
+---------------------------
+---------------------------
+-- 3. Queries
+---------------------------
+---------------------------
+
+\c database_name
+or
+\connect database_name
+
+\dt               __List all tables.
+
+\d name_of_table  __List columns of table.
+
+-- ============
+-- Query 
+-- ============
+-- SELECT col_name FROM table_name;
+
+-- (e.g. SELECT * FROM table_name;)
+
+-- SELECT col_name, col_name,... FROM table_name WHERE col_name >= some_value
+
+-- (e.g. SELECT * FROM contacts WHERE age >= 18;
+--       SELECT * FROM contacts WHERE age BETWEEN 13 AND 17;
+--       SELECT * FROM contacts WHERE name BETWEEN 'Judith' AND 'Wilma';
+--       SELECT * FROM contacts WHERE name LIKE 'We%';
+--       SELECT * FROM contacts WHERE birthday IN ('1969-01-01', '1999-01-01');
+--       SELECT * FROM contacts WHERE NOT age >= 18;
+
+
+select * from orders;
+select drink from orders;
+select side from orders;
+select burger from orders
+
+select id, customer_name from orders;
+select burger, drink from orders;
+
+select drink, id, customer_name from orders where id = 2;
+select drink, id, customer_name from orders where id = 3;
+select drink, id, customer_name from orders where id >=4;
+
 
 
 
