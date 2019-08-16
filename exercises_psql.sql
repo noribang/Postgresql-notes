@@ -21,7 +21,10 @@ psql
 \quit
 createdb database_one
 psql -d database_one
-\list
+\list             __List all databases.
+\connect NAME_OF_DATABASE
+\dt               __List all tables.
+\d name_of_table  __List columns of table.
 \quit
 dropdb database_one
 
